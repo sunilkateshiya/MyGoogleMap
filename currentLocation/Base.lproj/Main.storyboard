@@ -66,7 +66,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="map" translatesAutoresizingMaskIntoConstraints="NO" id="yIV-ox-3vf">
-                                <rect key="frame" x="40" y="64" width="277" height="282"/>
+                                <rect key="frame" x="96" y="64" width="183" height="282"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Destination Point :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dW2-ys-lGg">
                                 <rect key="frame" x="16" y="443" width="343" height="32"/>
@@ -105,7 +105,7 @@
                             <constraint firstItem="CBN-DL-env" firstAttribute="bottom" secondItem="vk0-dH-Zj6" secondAttribute="bottom" id="Ghk-bH-kgI"/>
                             <constraint firstItem="kea-MT-gVA" firstAttribute="trailing" secondItem="CBN-DL-env" secondAttribute="trailing" id="JKv-IX-uaZ"/>
                             <constraint firstAttribute="bottom" secondItem="kea-MT-gVA" secondAttribute="bottom" constant="147" id="Jat-S6-kYY"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="yIV-ox-3vf" secondAttribute="trailing" constant="42" id="KQd-bv-vFG"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="yIV-ox-3vf" secondAttribute="trailing" constant="80" id="KQd-bv-vFG"/>
                             <constraint firstItem="vk0-dH-Zj6" firstAttribute="height" secondItem="KXb-XS-NwE" secondAttribute="height" id="NBX-U6-rXh"/>
                             <constraint firstItem="oA1-0m-YwP" firstAttribute="leading" secondItem="VlV-yG-osB" secondAttribute="leadingMargin" id="OTB-LI-Yc9"/>
                             <constraint firstItem="dW2-ys-lGg" firstAttribute="leading" secondItem="VlV-yG-osB" secondAttribute="leadingMargin" id="QDm-H7-SOM"/>
@@ -125,7 +125,7 @@
                             <constraint firstItem="kea-MT-gVA" firstAttribute="bottom" secondItem="b9v-5q-S2a" secondAttribute="bottom" id="nVy-CW-OVM"/>
                             <constraint firstItem="kea-MT-gVA" firstAttribute="trailing" secondItem="oA1-0m-YwP" secondAttribute="trailing" id="nYA-7W-Tlc"/>
                             <constraint firstItem="kea-MT-gVA" firstAttribute="trailing" secondItem="dW2-ys-lGg" secondAttribute="trailing" id="rMK-Pf-fbF"/>
-                            <constraint firstItem="yIV-ox-3vf" firstAttribute="leading" secondItem="VlV-yG-osB" secondAttribute="leadingMargin" constant="24" id="rOw-ct-yCY"/>
+                            <constraint firstItem="yIV-ox-3vf" firstAttribute="leading" secondItem="VlV-yG-osB" secondAttribute="leadingMargin" constant="80" id="rOw-ct-yCY"/>
                             <constraint firstItem="kea-MT-gVA" firstAttribute="leading" secondItem="vk0-dH-Zj6" secondAttribute="leading" id="tgI-hm-7Gd"/>
                             <constraint firstItem="vk0-dH-Zj6" firstAttribute="trailing" secondItem="VlV-yG-osB" secondAttribute="trailingMargin" id="ytZ-Uj-TRl"/>
                         </constraints>

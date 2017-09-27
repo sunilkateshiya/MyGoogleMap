@@ -27,7 +27,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
         
         
         var camrema : GMSCameraPosition = GMSCameraPosition()
-        camrema = GMSCameraPosition.camera(withLatitude: 23.0225, longitude: 72.5714, zoom: 5.0)
+        camrema = GMSCameraPosition.camera(withLatitude:  23.0225, longitude: 72.5714, zoom: 5)
         self.googleMaps.camera = camrema
         self.googleMaps.delegate = self
         self.googleMaps.isMyLocationEnabled = true

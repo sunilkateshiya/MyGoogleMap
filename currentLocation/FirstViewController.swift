@@ -27,9 +27,9 @@ class FirstViewController: UIViewController, UITextFieldDelegate, CLLocationMana
     var locationStart = CLLocation()
     var locationEnd = CLLocation()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         startLocation.delegate = self
         destinationLocation.delegate = self
         startLocation.attributedPlaceholder = NSAttributedString(string: "Enter Your Start Location :", attributes: [NSForegroundColorAttributeName: UIColor.yellow])
@@ -42,7 +42,10 @@ class FirstViewController: UIViewController, UITextFieldDelegate, CLLocationMana
         
         let autoCompleteController = GMSAutocompleteViewController()
         autoCompleteController.delegate = self
-        
+        let filter = GMSAutocompleteFilter()
+        filter.type = GMSPlacesAutocompleteTypeFilter.city
+        filter.country = "IN"
+        autoCompleteController.autocompleteFilter = filter
         
         locationSelected = .startLocation
         
@@ -58,6 +61,11 @@ class FirstViewController: UIViewController, UITextFieldDelegate, CLLocationMana
         
         let autoCompleteController = GMSAutocompleteViewController()
         autoCompleteController.delegate = self
+        let filter = GMSAutocompleteFilter()
+        filter.type = GMSPlacesAutocompleteTypeFilter.city
+        filter.country = "IN"
+        autoCompleteController.autocompleteFilter = filter
+
         
         
         locationSelected = .destinationLocation
@@ -71,6 +79,7 @@ class FirstViewController: UIViewController, UITextFieldDelegate, CLLocationMana
     
     
     @IBAction func showDirection(_ sender: UIButton) {
+    
         performSegue(withIdentifier: "Go", sender: self)
         
     }
@@ -83,10 +92,13 @@ class FirstViewController: UIViewController, UITextFieldDelegate, CLLocationMana
         second.endLatitude = locationEnd.coordinate.latitude
         second.endLongitude = locationEnd.coordinate.longitude
         second.drawPath(startLocation: locationStart, endLocation: locationEnd)
+        startLocation.text = ""
+        destinationLocation.text = ""
         
         
     }
 }
+
 
 extension FirstViewController: GMSAutocompleteViewControllerDelegate {
     
@@ -124,6 +136,7 @@ extension FirstViewController: GMSAutocompleteViewControllerDelegate {
 }
 
 public extension UISearchBar {
+    
     
     public func setTextColor(color: UIColor) {
         let svs = subviews.flatMap { $0.subviews }
