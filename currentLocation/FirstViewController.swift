@@ -22,11 +22,8 @@ class FirstViewController: UIViewController, UITextFieldDelegate, CLLocationMana
     
     @IBOutlet weak var startLocation: UITextField!
     @IBOutlet weak var destinationLocation: UITextField!
-    
-    
-   var LocationManager = CLLocationManager()
+    var LocationManager = CLLocationManager()
     var locationSelected = Location.startLocation
-    
     var locationStart = CLLocation()
     var locationEnd = CLLocation()
     
@@ -41,9 +38,6 @@ class FirstViewController: UIViewController, UITextFieldDelegate, CLLocationMana
     }
     
     
- 
-    
-    
     @IBAction func openStartLocation(_ sender: UIButton) {
         
         let autoCompleteController = GMSAutocompleteViewController()
@@ -56,7 +50,7 @@ class FirstViewController: UIViewController, UITextFieldDelegate, CLLocationMana
         UISearchBar.appearance().setTextColor(color: UIColor.black)
         self.LocationManager.stopUpdatingLocation()
         
-       self.present(autoCompleteController, animated: true, completion: nil)
+        self.present(autoCompleteController, animated: true, completion: nil)
     }
     
     
@@ -77,33 +71,22 @@ class FirstViewController: UIViewController, UITextFieldDelegate, CLLocationMana
     
     
     @IBAction func showDirection(_ sender: UIButton) {
+        performSegue(withIdentifier: "Go", sender: self)
         
-        
-          performSegue(withIdentifier: "Go", sender: self)
-        
-        
-            
-      
-       }
+    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let second = segue.destination as! HomeViewController
         
-        second.locationManager = LocationManager
+        
         second.startLatitude = locationStart.coordinate.latitude
         second.startLogitude = locationStart.coordinate.longitude
         second.endLatitude = locationEnd.coordinate.latitude
         second.endLongitude = locationEnd.coordinate.longitude
-       second.drawPath(startLocation: locationStart, endLocation: locationEnd)
-        
+        second.drawPath(startLocation: locationStart, endLocation: locationEnd)
         
         
     }
-    }
-    
-
-
-
-
+}
 
 extension FirstViewController: GMSAutocompleteViewControllerDelegate {
     
@@ -113,20 +96,15 @@ extension FirstViewController: GMSAutocompleteViewControllerDelegate {
     
     func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
         
-        
-             
         if locationSelected == .startLocation {
             startLocation.text = "\(place.name)"
             locationStart = CLLocation(latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
-           
-                   
-        } else {
+        } else
+        {
             destinationLocation.text = "\(place.name)"
             locationEnd = CLLocation(latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
-            }
+        }
         
-        
-    
         self.dismiss(animated: true, completion: nil)
         
     }
@@ -155,5 +133,4 @@ public extension UISearchBar {
     }
     
 }
-
 
