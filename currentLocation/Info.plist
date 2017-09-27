@@ -2,6 +2,14 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Hey i am Use Map</string>
+	<key>NSLocationUsageDescription</key>
+	<string>Hey I am Using Map</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Hey iam Use Location</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Hey i Am use Map</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
@@ -28,6 +36,11 @@
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

@@ -7,16 +7,25 @@
 //
 
 import UIKit
+import GoogleMaps
+import GooglePlaces
+import SwiftyJSON
+import Alamofire
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    var googleAPIKey = "AIzaSyAvIQHI0DNn30mopsWtF01xBbngzEYANF4"
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        return true
+        
+        
+        GMSPlacesClient.provideAPIKey(googleAPIKey)
+        GMSServices.provideAPIKey(googleAPIKey)
+                return true
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
